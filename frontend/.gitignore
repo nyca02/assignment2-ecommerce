@@ -24,7 +24,5 @@ dist-ssr
 *.sw?
 
 
-backend/__pycache__/
-backend/*.pyc
-backend/.env
-.DS_Store
+
+
