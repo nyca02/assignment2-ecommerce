@@ -1,4 +1,154 @@
+import { useState } from "react";
+import { useNavigate, Link } from "react-router-dom";
+
 function Register() {
-  return <div><h1>Register Page</h1></div>
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+
+  const navigate = useNavigate();
+
+  async function handleRegister(e) {
+    e.preventDefault();
+
+    const response = await fetch("/api/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ username, email, password }),
+    });
+
+    if (response.ok) {
+      alert("Registration successful! Please login.");
+      navigate("/login");
+    } else {
+      const data = await response.json();
+      alert(`Registration failed`);
+    }
+  }
+  
+  return (
+    <div style={{ 
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      minHeight: '100vh',
+      backgroundColor: '#f5f5f5',
+      padding: '20px'
+    }}>
+      <div style={{
+        backgroundColor: 'white',
+        padding: '40px',
+        borderRadius: '10px',
+        boxShadow: '0 2px 10px rgba(0,0,0,0.1)',
+        width: '100%',
+        maxWidth: '400px'
+      }}>
+        <h2 style={{ 
+          textAlign: 'center',
+          marginBottom: '30px',
+          color: '#333',
+          fontSize: '28px'
+        }}>Register</h2>
+        <form onSubmit={handleRegister}>
+          <input
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '12px',
+              marginBottom: '15px',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+              fontSize: '16px',
+              boxSizing: 'border-box',
+              transition: 'border-color 0.3s'
+            }}
+            onFocus={(e) => e.target.style.borderColor = '#9fc7e8'}
+            onBlur={(e) => e.target.style.borderColor = '#ddd'}
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '12px',
+              marginBottom: '15px',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+              fontSize: '16px',
+              boxSizing: 'border-box',
+              transition: 'border-color 0.3s'
+            }}
+            onFocus={(e) => e.target.style.borderColor = '#9fc7e8'}
+            onBlur={(e) => e.target.style.borderColor = '#ddd'}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            style={{
+              width: '100%',
+              padding: '12px',
+              marginBottom: '25px',
+              borderRadius: '6px',
+              border: '1px solid #ddd',
+              fontSize: '16px',
+              boxSizing: 'border-box',
+              transition: 'border-color 0.3s'
+            }}
+            onFocus={(e) => e.target.style.borderColor = '#9fc7e8'}
+            onBlur={(e) => e.target.style.borderColor = '#ddd'}
+          />
+          <button
+            type="submit"
+            style={{
+              width: '100%',
+              backgroundColor: '#9fc7e8',
+              color: 'white',
+              border: 'none',
+              padding: '12px',
+              borderRadius: '6px',
+              cursor: 'pointer',
+              fontSize: '16px',
+              fontWeight: '600',
+              transition: 'background-color 0.3s, transform 0.1s'
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.backgroundColor = '#7fb3d5';
+              e.target.style.transform = 'translateY(-2px)';
+              e.target.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.backgroundColor = '#9fc7e8';
+              e.target.style.transform = 'translateY(0)';
+              e.target.style.boxShadow = 'none';
+            }}
+          >
+            Register
+          </button>
+        </form>
+        <p style={{ 
+          textAlign: 'center', 
+          marginTop: '20px',
+          color: '#666'
+        }}>
+          Already have an account? <Link to="/login" style={{ color: '#9fc7e8', textDecoration: 'none', fontWeight: '600' }}>Login here</Link>
+        </p>
+      </div>
+    </div>
+  );
 }
-export default Register
+
+export default Register;
+

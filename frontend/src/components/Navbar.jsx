@@ -16,8 +16,8 @@ function Navbar() {
         <Link to="/" style={{ textDecoration: 'none', color: '#2f3b46', fontWeight: 'bold' }}>Home</Link>
         <Link to="/cart" style={{ textDecoration: 'none', color: '#2f3b46', fontWeight: 'bold' }}>Cart</Link>
         <Link to="/login" style={{ textDecoration: 'none', color: '#2f3b46', fontWeight: 'bold' }}>Login</Link>
-        <Link to="/register" style={{ textDecoration: 'none', color: '#2f3b46', fontWeight: 'bold' }}>Register</Link>
-        <Link to="/admin" style={{ textDecoration: 'none', color: '#2f3b46', fontWeight: 'bold' }}>Admin</Link>
+        {/* <Link to="/register" style={{ textDecoration: 'none', color: '#2f3b46', fontWeight: 'bold' }}>Register</Link> */}
+        {/* <Link to="/admin" style={{ textDecoration: 'none', color: '#2f3b46', fontWeight: 'bold' }}>Admin</Link> */}
       </div>
     </nav>
   )
