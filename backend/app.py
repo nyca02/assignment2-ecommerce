@@ -8,6 +8,7 @@ import certifi
 import os
 from dotenv import load_dotenv
 from bson import ObjectId
+from flask import send_from_directory
 
 app = Flask(__name__)
 load_dotenv()
@@ -149,5 +150,9 @@ def get_all_carts():
     all_carts = list(cart_collection.find({}, {"_id": 0}))
     return jsonify(all_carts)
 
+@app.route('/static/images/<path:filename>')
+def serve_image(filename):
+    return send_from_directory('static/images', filename)
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True , port=5001)

@@ -114,4 +114,4 @@ products = [
 ]
 
 products_collection.insert_many(products)
-print(f"✅ {len(products)} products inserted successfully!")
+print(f" {len(products)} products inserted successfully!")
