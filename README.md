@@ -22,6 +22,7 @@ This project is a full-stack single-page application (SPA) built for a skincare 
 
 ## Folder Structure
 
+```text
 assignment2-ecommerce/
 ├── backend/
 │   ├── app.py                  # Flask API with all routes
@@ -30,19 +31,20 @@ assignment2-ecommerce/
 │   ├── .env                    # Environment variables (not pushed to GitHub)
 │   └── static/images/          # Product images
 └── frontend/
-├── src/
-│   ├── pages/
-│   │   ├── Home.jsx        # Product listing with live search
-│   │   ├── Cart.jsx        # Shopping cart page
-│   │   ├── Login.jsx       # Login page
-│   │   ├── Register.jsx    # Registration page
-│   │   └── AdminPanel.jsx  # Admin panel
-│   ├── components/
-│   │   ├── Navbar.jsx      # Navigation bar
-│   │   └── ProductCard.jsx # Individual product card
-│   ├── App.jsx             # Routes
-│   └── index.css           # Styling
-└── index.html              # Single HTML file (SPA)
+    ├── src/
+    │   ├── pages/
+    │   │   ├── Home.jsx        # Product listing with live search
+    │   │   ├── Cart.jsx        # Shopping cart page
+    │   │   ├── Login.jsx       # Login page
+    │   │   ├── Register.jsx    # Registration page
+    │   │   └── AdminPanel.jsx  # Admin panel
+    │   ├── components/
+    │   │   ├── Navbar.jsx      # Navigation bar
+    │   │   └── ProductCard.jsx # Individual product card
+    │   ├── App.jsx             # Routes
+    │   └── index.css           # Styling
+    └── index.html              # Single HTML file (SPA)
+```
 
 ## CRUD operation implemented
 - 'CREATE' : add a product to the cart
