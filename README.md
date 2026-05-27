@@ -22,21 +22,27 @@ This project is a full-stack single-page application (SPA) built for a skincare 
 
 ## Folder Structure
 
-- 'app.py' - Flask API with all routes
-- 'seed_products.py' - Script to insert the products into MongoDB
-- 'requirement.txt' - Python dependencies 
-- '.env' - Environment variables
-- 'static/images/' - Product images
-- 'Home.jsx' - Product listing with live search
-- 'Cart.jsx' - Shopping cart page
-- 'Login.jsx' - Login page
-- 'Registration.jsx' - Regisration page
-- 'AdminPanel.jsx' - Admin panel page
-- 'Navbar.jsx' - Navigation bar
-- 'ProductCard.jsx' - Individual product card
-- 'app.jsx' - Handle all the routes
-- 'index.css' - Styling
-- 'Index.html' - Single HTML files 
+assignment2-ecommerce/
+├── backend/
+│   ├── app.py                  # Flask API with all routes
+│   ├── seed_products.py        # Script to insert products into MongoDB
+│   ├── requirements.txt        # Python dependencies
+│   ├── .env                    # Environment variables (not pushed to GitHub)
+│   └── static/images/          # Product images
+└── frontend/
+├── src/
+│   ├── pages/
+│   │   ├── Home.jsx        # Product listing with live search
+│   │   ├── Cart.jsx        # Shopping cart page
+│   │   ├── Login.jsx       # Login page
+│   │   ├── Register.jsx    # Registration page
+│   │   └── AdminPanel.jsx  # Admin panel
+│   ├── components/
+│   │   ├── Navbar.jsx      # Navigation bar
+│   │   └── ProductCard.jsx # Individual product card
+│   ├── App.jsx             # Routes
+│   └── index.css           # Styling
+└── index.html              # Single HTML file (SPA)
 
 ## CRUD operation implemented
 - 'CREATE' : add a product to the cart
