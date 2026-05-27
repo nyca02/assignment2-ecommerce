@@ -1,0 +1,42 @@
+[
+  {
+    "user_id": "6a16b21d25b3ab60ebd9ba5c",
+    "product_id": 6,
+    "name": "1025 Dokdo Moisturizing Eye Cream - 30ml",
+    "price": 29.99,
+    "image": "/static/images/eyecream.jpg",
+    "quantity": 1
+  },
+  {
+    "user_id": "6a16b2c425b3ab60ebd9ba61",
+    "product_id": 1,
+    "name": "1025 Dokdo Cleanser - 150ml",
+    "price": 19.99,
+    "image": "/static/images/Cleanser.jpg",
+    "quantity": 3
+  },
+  {
+    "user_id": "6a16b32225b3ab60ebd9ba66",
+    "product_id": 6,
+    "name": "1025 Dokdo Moisturizing Eye Cream - 30ml",
+    "price": 29.99,
+    "image": "/static/images/eyecream.jpg",
+    "quantity": 1
+  },
+  {
+    "user_id": "6a16d7d725b3ab60ebd9ba6b",
+    "product_id": 1,
+    "name": "1025 Dokdo Cleanser - 150ml",
+    "price": 19.99,
+    "image": "/static/images/Cleanser.jpg",
+    "quantity": 2
+  },
+  {
+    "user_id": "6a16d7d725b3ab60ebd9ba6b",
+    "product_id": 6,
+    "name": "1025 Dokdo Moisturizing Eye Cream - 30ml",
+    "price": 29.99,
+    "image": "/static/images/eyecream.jpg",
+    "quantity": 1
+  }
+]
