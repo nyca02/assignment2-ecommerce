@@ -9,7 +9,7 @@ function ProductCard({ product }) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`    // send token in Authorization header to identify user who is adding to cart
       },
       body: JSON.stringify({
         product_id: product.id,

@@ -17,7 +17,7 @@ function Register() {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, email, password, role : "customer" }),
     });
 
     if (response.ok) {
@@ -110,6 +110,8 @@ function Register() {
             onFocus={(e) => e.target.style.borderColor = '#9fc7e8'}
             onBlur={(e) => e.target.style.borderColor = '#ddd'}
           />
+        
+
           <button
             type="submit"
             style={{

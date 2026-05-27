@@ -154,5 +154,35 @@ def get_all_carts():
 def serve_image(filename):
     return send_from_directory('static/images', filename)
 
+
+# admin update any user's cart quantity
+@app.route('/api/admin/cart/<int:product_id>/<user_id>', methods=['PUT'])
+@jwt_required()
+def admin_update_cart(product_id, user_id):
+    admin_id = get_jwt_identity()
+    admin = users_collection.find_one({"_id": ObjectId(admin_id)})
+    if not admin or admin.get("role") != "admin":
+        return jsonify({"message": "Unauthorized"}), 403
+    data = request.get_json()
+    cart_collection.update_one(
+        {"product_id": product_id, "user_id": user_id},
+        {"$set": {"quantity": data["quantity"]}}
+    )
+    return jsonify({"message": "Cart updated"})
+
+# admin delete any user's cart item
+@app.route('/api/admin/cart/<int:product_id>/<user_id>', methods=['DELETE'])
+@jwt_required()
+def admin_delete_cart(product_id, user_id):
+    admin_id = get_jwt_identity()
+    admin = users_collection.find_one({"_id": ObjectId(admin_id)})
+    if not admin or admin.get("role") != "admin":
+        return jsonify({"message": "Unauthorized"}), 403
+    cart_collection.delete_one({
+        "product_id": product_id,
+        "user_id": user_id
+    })
+    return jsonify({"message": "Cart item deleted"})
+
 if __name__ == '__main__':
     app.run(debug=True , port=5001)

@@ -19,12 +19,16 @@ function Login() {
     });
 
     const data = await response.json();
-
     if (response.ok) {
-      localStorage.setItem('token', data.token);  // store token in localStorage for later use
+      // store token and basic user info for later use
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify({ username: data.username, role: data.role }));
+      // notify other components (same-tab) that auth changed
+      try { window.dispatchEvent(new Event('authChanged')) } catch (e) {}
       alert('Login successful!');
 
-      if (data.is_admin) {
+      // redirect based on role returned from backend
+      if (data.role === 'admin') {
         navigate('/admin');
       } else {
         navigate('/');
